@@ -1,0 +1,28 @@
+# lab-12/apache-cgi.yml
+# usage:
+#   ansible-playbook apache-cgi.yml --extra-vars "host=$USER"
+---
+- hosts: '{{ host }}'
+  gather_facts: no
+  become: true
+
+  tasks:
+
+  - name: Enable the Apache2 module cgi
+    community.general.apache2_module:
+      state: present
+      name: cgid
+    notify:
+      - Restart Apache
+
+  - name: Install sample CGI program
+    copy:
+      src: "files/cgi-hello.py"
+      dest: "/usr/lib/cgi-bin/cgi-hello.py"
+      mode: '0755'
+      
+  handlers:
+    - name: Restart Apache
+      service:
+        name: apache2
+        state: restarted

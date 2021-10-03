@@ -1,0 +1,45 @@
+# lab-12/db-version-1.yml
+# usage:
+#   ansible-playbook version-2-to-1.yml --extra-vars "host=$USER"
+---
+- hosts: '{{ host }}'
+  gather_facts: no
+  become: true
+  become_user: postgres
+
+  tasks:
+
+  
+  - name: add lost column
+    community.postgresql.postgresql_query:
+      db: cptr245
+      query: ALTER TABLE "Faculty" ADD COLUMN name text;
+
+  - name: restore name
+    community.postgresql.postgresql_query:
+      db: cptr245
+      query: UPDATE "Faculty" SET name = concat(lastname, ', ', firstname);
+
+  - name: remove old columns
+    community.postgresql.postgresql_query:
+      db: cptr245
+      query: Alter TABLE "Faculty" DROP COLUMN lastname;
+
+  - name: remove old columns
+    community.postgresql.postgresql_query:
+      db: cptr245
+      query: Alter TABLE "Faculty" DROP COLUMN firstname;
+
+  - name: update database
+    community.postgresql.postgresql_query:
+      db: cptr245
+      query: UPDATE "DbVersion" SET version = 1;
+
+
+  - name: Install application version 1
+    become: true
+    become_user: root
+    copy:
+      src: "files/listFaculty1.py"
+      dest: "/usr/lib/cgi-bin/listFaculty.py"
+      mode: '0755'

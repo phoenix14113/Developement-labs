@@ -1,0 +1,7 @@
+---
+app_user: "taylad"
+http_host: "taylad.cs.wallawalla.edu"
+http_conf: "taylad.conf"
+http_port: "80"
+disable_default: true
+...

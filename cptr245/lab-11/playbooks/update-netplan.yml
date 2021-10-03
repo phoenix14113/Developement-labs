@@ -1,0 +1,17 @@
+# file: update-netplan.yml
+# usage:
+#   ansible-playbook playbooks/update-netplan.yml --extra-vars "host=$USER"
+---
+- hosts: '{{ host }}'
+  become: true
+
+  tasks:
+    - name: Copy netplan file
+      copy:
+        src: "../files/01-netcfg.yaml"
+        dest: "/etc/netplan/01-netcfg.yaml"
+      register: netcfg
+
+    - name: netplan apply
+      command: netplan apply
+      when: netcfg.changed

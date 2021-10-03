@@ -1,0 +1,57 @@
+# lab-12/db-version-1.yml
+# usage:
+#   ansible-playbook version-0-to-1.yml --extra-vars "host=$USER"
+---
+- hosts: '{{ host }}'
+  gather_facts: no
+  become: true
+  become_user: postgres
+
+  tasks:
+
+  - name: create DbVersion
+    community.postgresql.postgresql_table:
+      db: cptr245
+      name: DbVersion
+      columns:
+      - version integer
+
+  - name: set DbVersion
+    community.postgresql.postgresql_query:
+      db: cptr245
+      query: INSERT INTO "DbVersion" SELECT 1 WHERE NOT EXISTS (SELECT * FROM "DbVersion")
+
+  - name: create Faculty
+    community.postgresql.postgresql_table:
+      db: cptr245
+      name: Faculty
+      columns:
+      - name text
+
+  - name: add Aamodt, Larry
+    community.postgresql.postgresql_query:
+      db: cptr245
+      query: INSERT INTO "Faculty" SELECT 'Aamodt, Larry' WHERE NOT EXISTS (SELECT * FROM "Faculty" WHERE name = 'Aamodt, Larry')
+
+  - name: add Carman, Preston
+    community.postgresql.postgresql_query:
+      db: cptr245
+      query: INSERT INTO "Faculty" SELECT 'Carman, Preston' WHERE NOT EXISTS (SELECT * FROM "Faculty" WHERE name = 'Carman, Preston')
+
+  - name: add Duncan, Jonathan
+    community.postgresql.postgresql_query:
+      db: cptr245
+      query: INSERT INTO "Faculty" SELECT 'Duncan, Jonathan' WHERE NOT EXISTS (SELECT * FROM "Faculty" WHERE name = 'Duncan, Jonathan')
+
+  - name: add Foster, James
+    community.postgresql.postgresql_query:
+      db: cptr245
+      query: INSERT INTO "Faculty" SELECT 'Foster, James' WHERE NOT EXISTS (SELECT * FROM "Faculty" WHERE name = 'Foster, James')
+
+  - name: Install application version 1
+    become: true
+    become_user: root
+    copy:
+      src: "files/listFaculty1.py"
+      dest: "/usr/lib/cgi-bin/listFaculty.py"
+      mode: '0755'

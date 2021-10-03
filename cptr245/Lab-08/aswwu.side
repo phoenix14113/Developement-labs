@@ -1,0 +1,325 @@
+{
+  "id": "b81d50f6-75b5-4a73-b803-1822d5e5532e",
+  "version": "2.0",
+  "name": "CPTR 245 Lab 08",
+  "url": "https://aswwu.com",
+  "tests": [{
+    "id": "eb313601-cbf5-4b38-b27d-555ee151075a",
+    "name": "Update ASWWU Profile",
+    "commands": [{
+      "id": "2102d544-a917-40e6-b97a-e54c5f5c593a",
+      "comment": "",
+      "command": "open",
+      "target": "https://aswwu.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e9a7881-b14f-4586-bf10-d5887839d09e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1547x763",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4435b900-5698-474f-b043-de520bc6c35d",
+      "comment": "",
+      "command": "click",
+      "target": "css=#nav-links > .nav-item:nth-child(1) > .smooth",
+      "targets": [
+        ["css=#nav-links > .nav-item:nth-child(1) > .smooth", "css:finder"],
+        ["xpath=//a[contains(text(),'Mask')]", "xpath:link"],
+        ["xpath=//ul[@id='nav-links']/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://aswwu.com/mask')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "283cbb39-3076-4056-be44-1bc5112ba6e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=mask-search-query",
+      "targets": [
+        ["id=mask-search-query", "id"],
+        ["css=#mask-search-query", "css:finder"],
+        ["xpath=//input[@id='mask-search-query']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/ng-component/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd16f4f1-40c0-4cac-9e20-6bd521807132",
+      "comment": "",
+      "command": "type",
+      "target": "id=mask-search-query",
+      "targets": [
+        ["id=mask-search-query", "id"],
+        ["css=#mask-search-query", "css:finder"],
+        ["xpath=//input[@id='mask-search-query']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/ng-component/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Adam"
+    }, {
+      "id": "cd178bc8-46c5-4acd-91df-aa54ca40321b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fas",
+      "targets": [
+        ["css=.fas", "css:finder"],
+        ["xpath=//button[@id='mask-search-button']/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "47d748a0-effd-4438-ade9-74a45f09642d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.columns:nth-child(3) .img-fluid",
+      "targets": [
+        ["css=.columns:nth-child(3) .img-fluid", "css:finder"],
+        ["xpath=//img[@alt='Adam Taylor']", "xpath:img"],
+        ["xpath=//div[@id='content']/ng-component/div/div[2]/search-results/div/div/div[3]/profile-sm/a/div/img", "xpath:idRelative"],
+        ["xpath=//div[3]/profile-sm/a/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "68e3d5d8-3701-466c-bb46-8e75fd2728b6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login to view full profile",
+      "targets": [
+        ["linkText=Login to view full profile", "linkText"],
+        ["css=p > .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Login to view full profile')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'https://saml.aswwu.com?redirectURI=/mask/profile/Adam.Taylor/1920')]", "xpath:href"],
+        ["xpath=//p[27]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login to view full profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4df6fe51-37f1-4c45-adb1-7e0b26e08b5a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/?sso')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "919de7c3-835b-4914-81e4-bc311fc8d8d3",
+      "comment": "",
+      "command": "click",
+      "target": "id=userNameInput",
+      "targets": [
+        ["id=userNameInput", "id"],
+        ["name=UserName", "name"],
+        ["css=#userNameInput", "css:finder"],
+        ["xpath=//input[@id='userNameInput']", "xpath:attributes"],
+        ["xpath=//div[@id='userNameArea']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5d07773-0b62-4f5d-8a54-780c8de2fcee",
+      "comment": "",
+      "command": "type",
+      "target": "id=userNameInput",
+      "targets": [
+        ["id=userNameInput", "id"],
+        ["name=UserName", "name"],
+        ["css=#userNameInput", "css:finder"],
+        ["xpath=//input[@id='userNameInput']", "xpath:attributes"],
+        ["xpath=//div[@id='userNameArea']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab2dfe35-cbfe-49eb-9511-d89f213da2bb",
+      "comment": "",
+      "command": "click",
+      "target": "id=passwordInput",
+      "targets": [
+        ["id=passwordInput", "id"],
+        ["name=Password", "name"],
+        ["css=#passwordInput", "css:finder"],
+        ["xpath=//input[@id='passwordInput']", "xpath:attributes"],
+        ["xpath=//div[@id='passwordArea']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f134c73-c09e-4b46-97a5-883668909d92",
+      "comment": "",
+      "command": "type",
+      "target": "id=passwordInput",
+      "targets": [
+        ["id=passwordInput", "id"],
+        ["name=Password", "name"],
+        ["css=#passwordInput", "css:finder"],
+        ["xpath=//input[@id='passwordInput']", "xpath:attributes"],
+        ["xpath=//div[@id='passwordArea']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6afda899-41b2-4b52-ad99-ccc5f0c89dcc",
+      "comment": "",
+      "command": "click",
+      "target": "id=submitButton",
+      "targets": [
+        ["id=submitButton", "id"],
+        ["css=#submitButton", "css:finder"],
+        ["xpath=//span[@id='submitButton']", "xpath:attributes"],
+        ["xpath=//div[@id='submissionArea']/span", "xpath:idRelative"],
+        ["xpath=//div[5]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c43b28a9-3644-40f0-bbb3-c5a24bc293c2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-circle",
+      "targets": [
+        ["css=.btn-circle", "css:finder"],
+        ["xpath=//img[contains(@src,'https://aswwu.com/media/img-sm/profiles/1920/462-2057271.jpg')]", "xpath:img"],
+        ["xpath=//button[@id='bubbleicon']/img", "xpath:idRelative"],
+        ["xpath=//button/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d8ccf97-792e-4411-8cf0-bea2f85fec87",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Update Profile",
+      "targets": [
+        ["linkText=Update Profile", "linkText"],
+        ["css=.btn-default:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Update Profile')]", "xpath:link"],
+        ["xpath=//div[@id='bubble-popup']/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://aswwu.com/mask/update')]", "xpath:href"],
+        ["xpath=//div/div/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Update Profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd5859fd-7c12-4b89-8405-65ad1e4a3f94",
+      "comment": "",
+      "command": "click",
+      "target": "id=favorite_booksinput",
+      "targets": [
+        ["id=favorite_booksinput", "id"],
+        ["css=#favorite_booksinput", "css:finder"],
+        ["xpath=//input[@id='favorite_booksinput']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div[6]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34c60186-c10d-4cd2-afed-eb87d94b5c32",
+      "comment": "",
+      "command": "type",
+      "target": "id=favorite_booksinput",
+      "targets": [
+        ["id=favorite_booksinput", "id"],
+        ["css=#favorite_booksinput", "css:finder"],
+        ["xpath=//input[@id='favorite_booksinput']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div[6]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "Legend of the Guardians"
+    }, {
+      "id": "ef6b7cd7-765e-4928-a11d-a466fa750592",
+      "comment": "",
+      "command": "click",
+      "target": "id=quoteinput",
+      "targets": [
+        ["id=quoteinput", "id"],
+        ["css=#quoteinput", "css:finder"],
+        ["xpath=//input[@id='quoteinput']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div[6]/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09f779f6-b640-4f8c-83ef-5178a41b0c52",
+      "comment": "",
+      "command": "click",
+      "target": "id=quoteinput",
+      "targets": [
+        ["id=quoteinput", "id"],
+        ["css=#quoteinput", "css:finder"],
+        ["xpath=//input[@id='quoteinput']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div[6]/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "84f1e701-21ed-47b6-88ec-4f2e2a7e20cd",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=quoteinput",
+      "targets": [
+        ["id=quoteinput", "id"],
+        ["css=#quoteinput", "css:finder"],
+        ["xpath=//input[@id='quoteinput']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div[6]/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e27ca4d6-e532-4b54-90f2-6a1aea3a6761",
+      "comment": "",
+      "command": "type",
+      "target": "id=quoteinput",
+      "targets": [
+        ["id=quoteinput", "id"],
+        ["css=#quoteinput", "css:finder"],
+        ["xpath=//input[@id='quoteinput']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div[6]/div/div[5]/div/input", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div[5]/div/input", "xpath:position"]
+      ],
+      "value": "May you live in interesting times"
+    }, {
+      "id": "e6e90fe6-ee2b-4794-ab58-603da223cb8d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//div[@id='submit']/button", "xpath:idRelative"],
+        ["xpath=//div[8]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Update Profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a323be4-2597-4a52-b3a0-51a64c5ea66d",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ab2e690-c22c-49ba-a924-22995666309c",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "d7e70a3a-372c-403f-9470-59e909213252",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://aswwu.com/"],
+  "plugins": []
+}

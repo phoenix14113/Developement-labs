@@ -1,0 +1,11 @@
+# This file describes the network interfaces available on your system
+# For more information, see netplan(5).
+network:
+  ethernets:
+    ens18:
+      nameservers:
+          search: [ cs.wallawalla.edu wallawalla.edu ]
+          addresses:
+              - "172.27.2.1"
+              - "172.20.1.11"
+              - "10.10.10.1"

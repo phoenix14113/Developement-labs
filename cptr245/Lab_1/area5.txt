@@ -1,0 +1,2 @@
+The area of a square with sides 5 units long is 25 units squared.
+The area of a circle with sides 5 units long is 78.5 units squared.

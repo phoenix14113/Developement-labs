@@ -1,0 +1,59 @@
+# lab-12/install-postgresql.yml
+# usage:
+#   ansible-playbook install-postgresql.yml --extra-vars "host=$USER"
+---
+- hosts: '{{ host }}'
+  gather_facts: no
+  become: true
+
+  tasks:
+
+  - name: Ensure selected locale exists
+    locale_gen:
+      name: en_US.UTF-8
+      state: present
+
+  - name: Ensure bash, OpenSSL, libssl, python3, and python3-pip are the latest versions
+    apt:
+      name: ['bash', 'openssl', 'libssl-dev', 'libssl-doc', 'python3', 'python3-pip']
+      update_cache: yes
+      state: latest
+    tags: packages
+
+  - name: install setfacl support
+    become: yes
+    apt: pkg=acl
+
+  - name: Install PostgreSQL
+    apt:
+      name: ['postgresql', 'postgresql-contrib', 'libpq-dev']
+      update_cache: no
+      state: latest
+    tags: packages
+
+  - name: Make sure psycopg2 is installed
+    pip:
+      name: psycopg2
+      state: present
+
+  - name: Ensure the PostgreSQL service is running
+    service: name=postgresql state=started enabled=yes
+
+  - name: Ensure database is created
+    become: true
+    become_user: postgres
+    community.postgresql.postgresql_db:
+      name=cptr245
+      encoding='UTF-8'
+      lc_collate='en_US.UTF-8'
+      lc_ctype='en_US.UTF-8'
+      template='template0'
+      state=present
+
+  - name: Create web user
+    become: true
+    become_user: postgres
+    community.postgresql.postgresql_user:
+      db: cptr245
+      name: www-data
+      role_attr_flags: SUPERUSER

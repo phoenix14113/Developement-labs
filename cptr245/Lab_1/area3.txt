@@ -1,0 +1,2 @@
+The area of a square with sides 3 units long is 9 units squared.
+The area of a circle with sides 3 units long is 28.26 units squared.
